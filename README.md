@@ -1,12 +1,19 @@
 # n26-code-challenge
 
-We would like to have a restful API for our statistics. The main use case for our API is to calculate realtime statistic from the last 60 seconds. There will be two APIs, one of them is called every time a transaction is made. It is also the sole input of this rest API. The other one returns the statistic based of the transactions of the last 60 seconds.
+We would like to have a restful API for our statistics. The main use case for our API is to calculate realtime statistic from the last 60 seconds. 
+There will be two APIs, one of them is called every time a transaction is made. It is also the sole input of this rest API. The other one returns the statistic based of the transactions of the last 60 seconds.
 
-Specs POST /transactions
+Specs:
 
-Every Time a new transaction happened, this endpoint will be called. Body: { "amount": 12.3, "timestamp": 1478192204000 }
+POST /transactions
 
-Where: ● amount - transaction amount
+Every Time a new transaction happened, this endpoint will be called. 
+
+Body: { "amount": 12.3, "timestamp": 1478192204000 }
+
+Where: 
+
+● amount - transaction amount
 
 ● timestamp - transaction time in epoch in millis in UTC time zone (this is not current timestamp)
 
@@ -38,7 +45,7 @@ Where:
 
 ● count is a long specifying the total number of transactions happened in the last 60 seconds
 
-Requirements
+Requirements:
 
 For the rest api, the biggest and maybe hardest requirement is to make the GET /statistics execute in constant time and space. The best solution would be O(1). It is very recommended to tackle the O(1) requirement as the last thing to do as it is not the only thing which will be rated in the code challenge.
 
